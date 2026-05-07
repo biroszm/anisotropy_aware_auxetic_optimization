@@ -19,7 +19,7 @@ Auxetic metamaterials are structures with a **negative Poisson's ratio**. Instea
 
 Such structures are useful when deformation control, energy absorption, flexibility, or impact resistance are important. However, many optimized auxetic designs are created under idealized assumptions. In real FDM printing, the structure is built layer by layer, and this introduces mechanical anisotropy. Loads acting perpendicular to the layers can be especially problematic because the interlayer bonding is usually weaker than the in-plane material response.
 
-![Auxetic behaviour and FDM anisotropy](assets/fig01_auxetic_and_fdm_anisotropy.png)
+![Auxetic behaviour and FDM anisotropy](preview_1.png)
 
 **Figure:** The top part contrasts conventional and auxetic lateral deformation. The bottom part shows why FDM anisotropy matters: loading relative to the layer direction can create favourable or unfavourable stress states. This was one of the main motivations for adding anisotropy-aware objectives to the optimization loop.
 
@@ -141,7 +141,7 @@ The FEA stage computes:
 
 The stress orientation is important because the printed structure does not behave identically in every direction. I therefore evaluated not only the auxetic deformation, but also whether the stress trajectories were likely to interact unfavourably with the printing-layer direction.
 
-![Principal stress directions](assets/fig02_principal_stress_directions.png)
+![Principal stress directions](preview_2.png)
 
 **Figure:** Principal stress directions from the FEA stage. Red arrows indicate tensile principal stresses and blue arrows indicate compressive principal stresses. Their orientation is used to evaluate whether the geometry is favourable for FDM-type anisotropy.
 
@@ -227,7 +227,7 @@ The main design choices were:
 
 The optimization successfully generated geometries for several target Poisson's ratios, including approximately `-1`, `-2`, and `-3`.
 
-![Poisson ratio geometry comparison](assets/fig03_poisson_geometry_comparison.png)
+![Poisson ratio geometry comparison](preview_3.png)
 
 **Figure:** Comparison of generated geometries without anisotropy-aware objectives (left) and with anisotropy-aware objectives (right). The same target Poisson-ratio levels are shown, but the anisotropy-aware geometries reduce the adverse stress metrics while preserving auxetic behaviour.
 
@@ -250,7 +250,7 @@ The optimized and non-optimized structures were fabricated using PLA and FDM pri
 1. whether the printed geometries still showed auxetic behaviour;
 2. whether anisotropy-aware optimization changed the mechanical response under tensile testing.
 
-![Anisotropy and tensile test results](assets/fig04_anisotropy_and_tensile_results.png)
+![Anisotropy and tensile test results](preview_4.png)
 
 **Figure:** Summary of anisotropy reduction and tensile testing. The bar chart shows the reduction of maximum adverse tension and compression after anisotropy-aware optimization. The tensile plots show that the non-optimized specimens reached higher peak loads in some cases, while the optimized specimens generally showed greater deformation capacity before failure.
 
